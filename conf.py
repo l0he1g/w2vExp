@@ -5,5 +5,5 @@
 """
 
 titles_pt = "data/titles.csv"
-d2v_model_pt = "/tmp/d2v.model"
-w2v_model_pt = "/tmp/w2v.model"
+d2v_model_pt = "model/d2v.model"
+w2v_model_pt = "model/w2v.model"
