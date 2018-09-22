@@ -7,14 +7,13 @@ import numpy as np
 from gensim.models import Word2Vec
 from data_loader import titles
 from conf import w2v_model_pt as model_pt
-from util import tokenize
+from common.util import tokenize
 
 def doc2vec(doc):
   words = tokenize(doc)
   sum_vec= np.sum(np.array([model.wv.get_vector(w) for w in words if w in model.wv]), axis=0)
   vec = sum_vec / np.linalg.norm(sum_vec, 2)
   return vec
-
 
 def docs2vecs(docs):
   return np.stack([doc2vec(d) for d in docs], axis=0)

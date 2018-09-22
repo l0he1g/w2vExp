@@ -4,7 +4,7 @@
 import csv
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from conf import titles_pt, d2v_model_pt
-from util import tokenize
+from common.util import tokenize
 import sys
 
 """Module documentation 

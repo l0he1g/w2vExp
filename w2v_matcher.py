@@ -5,9 +5,8 @@ import sys
 
 import numpy as np
 from gensim.models import Word2Vec
-from data_loader import titles
 from conf import w2v_model_pt as model_pt
-from util import tokenize
+from common.util import tokenize
 
 def doc2vec(doc):
   words = tokenize(doc)

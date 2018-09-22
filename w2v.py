@@ -6,7 +6,7 @@ from conf import w2v_model_pt as model_pt
 from data_loader import titles
 import sys
 
-from util import tokenize
+from common.util import tokenize
 
 """word2vec training
 """
