@@ -4,11 +4,12 @@
 """文档匹配基类
 """
 from abc import ABC, abstractmethod
-from basic.doc import Doc
+from match.doc import Doc
+from typing import List
 
 class DocMatcher(ABC):
 
   @abstractmethod
-  def match(self, doc: str, topN:int = 10) -> list[Doc]:
+  def match(self, doc: str, topN: int) -> List[Doc]:
     pass
 

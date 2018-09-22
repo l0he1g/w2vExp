@@ -2,16 +2,17 @@
 import csv
 
 from conf import titles_pt
+from match.doc import Doc
+from typing import List
 
-def load_titles():
+def load_titles() -> List[Doc]:
   rows = csv.reader(open(titles_pt, encoding="utf8"))
   docs = []
   for row in rows:
-    doc = row[2]
+    doc = Doc(row[1], row[2])
     docs.append(doc)
   return docs
 
-titles = load_titles()
-
 if __name__ == '__main__':
-    print("n(title)=%d" % len(titles))
+  titles = load_titles()
+  print("n(title)=%d" % len(titles))

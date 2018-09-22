@@ -14,3 +14,6 @@ class Doc:
     self.standard = standard
     self.raw = raw
 
+  def __str__(self):
+    return "Doc(standard=%s, raw=%s)" % (self.standard, self.raw)
+
