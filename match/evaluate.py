@@ -7,10 +7,11 @@ input:
 """
 from match.doc import Doc
 from match.matcher import DocMatcher
-from match.w2v.W2vMatcher import W2vMatcher
+from match.w2v.w2v_match import W2vMatcher
 from conf import w2v_model_pt
 from data_loader import load_titles
 from typing import List
+
 
 def eval(docs: List[Doc], matcher: DocMatcher, topN: int) -> float:
   """
@@ -26,7 +27,7 @@ def eval(docs: List[Doc], matcher: DocMatcher, topN: int) -> float:
   for doc in docs:
     matched_docs, _ = matcher.match(doc.raw, topN)
     for matched_doc in matched_docs:
-      if matched_doc.standard == doc.standard:
+      if matched_doc.standard == doc.standard and matched_doc.raw != doc.raw:
         n_right += 1
         break
 
